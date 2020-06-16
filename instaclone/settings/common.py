@@ -44,6 +44,7 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     'debug_toolbar',
     'bootstrap4',
+    'django_pydenticon',
 ]
 
 MY_APPS = [
