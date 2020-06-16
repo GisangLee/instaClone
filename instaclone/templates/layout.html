@@ -107,8 +107,19 @@
                     ></path>
                   </svg>
                 </a>
-                <a class="p-2text-dark" href="#">
-                  <img src="{% url 'pydenticon_image' user.username %}" style="width:30px; height:30px;"/>
+                <a class="p-2text-dark" href="{% url 'profile_edit' %}">
+                  {% if user.avatar %}
+                  <img
+                    src="{{ user.avatar.url }}"
+                    alt="profile"
+                    style="width: 30px; height: 30px;"
+                  />
+                  {% else %}
+                  <img
+                    src="{% url 'pydenticon_image' user.username %}"
+                    style="width: 30px; height: 30px;"
+                  />
+                  {% endif %}
                 </a>
               </nav>
             </div>
