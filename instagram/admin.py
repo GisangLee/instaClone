@@ -4,7 +4,8 @@ from .models import Post, Tag
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    pass
+    list_display = ["id", "author", "photo",
+                    "caption", "location", ]
 
 
 @admin.register(Tag)
