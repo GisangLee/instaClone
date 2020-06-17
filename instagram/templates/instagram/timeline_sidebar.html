@@ -1,0 +1,33 @@
+<div class="d-flex p-2 mb-3">
+  <div class="mr-2">
+    <img
+      src="{{ user.avatar_url }}"
+      style="width: 48px; height: 48px;"
+      class="rounded-circle"
+    />
+  </div>
+  <div>
+    {{ user.username }}<br />
+    <small class="text-muted">{{ user.name }}</small>
+  </div>
+</div>
+
+<div class="card mb-3">
+  <div class="card-header text-muted">
+    스토리
+  </div>
+  <div class="card-body text-muted">
+    당신이 팔로잉하는 사람들의 스토리를 보여줍니다.
+  </div>
+</div>
+
+<div class="card mb-3">
+  <div class="card-header text-muted">
+    {{ user.name }}님을 위한 친구추천
+  </div>
+  <div class="card-body text-muted">
+    {% include "instagram/timeline_sidebar_user_follow.html" with friend_user=user %}
+    {% include "instagram/timeline_sidebar_user_follow.html" with friend_user=user %}
+    {% include "instagram/timeline_sidebar_user_follow.html" with friend_user=user %}
+  </div>
+</div>
