@@ -1,4 +1,7 @@
-{% extends "instagram/layout.html" %} {% block content %}
+{% extends "instagram/layout.html" %}
+{% load thumbnail %}
+
+{% block content %}
 <div class="container">
   <div class="row pt-3 pb-5">
     <div class="col-sm-3" style="text-align: center;">
@@ -14,16 +17,16 @@
         >프로필 수정하기</a
       >
       <hr />
-      0 posts, 0 follower, 0 following
+      {{ post_list_count }} posts, 0 follower, 0 following
       <hr />
       {{ page_user.name }}
     </div>
   </div>
   <div class="row mt-3">
     {% for post in post_list %}
-    <div class="col-sm-4">
+    <div class="col-sm-4 mb-3">
       <img
-        src="{{ post.photo.url }}"
+        src="{% thumbnail post.photo 512x512 crop %}"
         alt="{{ post.caption }}"
         style="width: 100%;"
       />
